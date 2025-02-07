@@ -8,14 +8,21 @@ const HomePage = styled.div`
   background-color: #f5f5f5;
   min-height: 100vh;
   padding-top: 0;
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 const BannerSection = styled.section`
-  margin-bottom: 2rem;
+  margin: 0;
   position: relative;
   width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 2rem;
+  overflow: hidden;
   
   @media (max-width: 768px) {
     margin-bottom: 1rem;
@@ -26,15 +33,18 @@ const MainContent = styled.main`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
 
   @media (max-width: 768px) {
-    padding: 0;
+    width: 100%;
+    padding: 0 0.5rem;
   }
 
-  & > ${BannerSection} {
+  section {
+    margin-bottom: 2rem;
+
     @media (max-width: 768px) {
-      margin-left: -1rem;
-      margin-right: -1rem;
+      margin-bottom: 1rem;
     }
   }
 `;
@@ -44,10 +54,20 @@ const SectionHeader = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+  padding: 0 1rem;
   
   h2 {
     font-size: 1.5rem;
     color: #333;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
@@ -72,9 +92,20 @@ const HeaderButton = styled.button`
 
 const ProductsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-bottom: 2rem;
+  padding: 0 1rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
 `;
 
 const ProductCard = styled.div`
@@ -86,6 +117,10 @@ const ProductCard = styled.div`
   
   &:hover {
     transform: translateY(-4px);
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 4px;
   }
 `;
 
@@ -102,7 +137,7 @@ const ProductImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 `;
 
@@ -120,13 +155,23 @@ const DiscountBadge = styled.div`
 
 const ProductContent = styled.div`
   padding: 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 const ProductTitle = styled.h3`
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #333;
   margin-bottom: 0.5rem;
   min-height: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    min-height: 32px;
+    margin-bottom: 0.3rem;
+  }
 `;
 
 const RatingContainer = styled.div`
@@ -149,12 +194,20 @@ const RatingContainer = styled.div`
 
 const PriceContainer = styled.div`
   margin: 0.5rem 0;
+
+  @media (max-width: 768px) {
+    margin: 0.3rem 0;
+  }
 `;
 
 const CurrentPrice = styled.span`
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #333;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const OriginalPrice = styled.span`
@@ -162,10 +215,18 @@ const OriginalPrice = styled.span`
   text-decoration: line-through;
   margin-left: 0.5rem;
   font-size: 0.9rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Section = styled.section`
   margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const ViewMore = styled(Link)`
@@ -184,15 +245,15 @@ const ViewMore = styled(Link)`
 const BannerCarousel = styled.div`
   position: relative;
   width: 100%;
-  padding-top: 35%;
+  padding-top: 40%;
   overflow: hidden;
 
   @media (max-width: 1024px) {
-    padding-top: 45%;
+    padding-top: 50%;
   }
 
   @media (max-width: 768px) {
-    padding-top: 56.25%;
+    padding-top: 60%;
   }
 
   @media (max-width: 480px) {
@@ -230,18 +291,19 @@ const BannerOverlay = styled.div`
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.4) 30%,
     rgba(0, 0, 0, 0) 100%
   );
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding-left: max(10%, calc((100vw - 1200px) / 2 + 2rem));
+  padding-right: 10%;
 
   @media (max-width: 768px) {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.7) 100%
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.8) 100%
     );
     align-items: flex-end;
     padding: 2rem 1.5rem;
@@ -254,7 +316,7 @@ const BannerContent = styled.div`
   z-index: 1;
 
   h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -274,9 +336,10 @@ const BannerContent = styled.div`
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
 
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -285,22 +348,31 @@ const BannerContent = styled.div`
   }
 
   button {
-    padding: 0.8rem 2rem;
+    padding: 1rem 2.5rem;
     background: #0B79BF;
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 
     &:hover {
       background: #096397;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 768px) {
-      padding: 0.6rem 1.5rem;
+      padding: 0.8rem 2rem;
       font-size: 1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
     }
   }
 `;

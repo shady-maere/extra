@@ -18,7 +18,7 @@ const productSchema = new mongoose.Schema({
   category: {
     type: String,
     required: true,
-    enum: ['electronics', 'fashion', 'home', 'solar', 'phones']
+    enum: ['phones', 'speakers', 'solar', 'fashion', 'earpods_accessories']
   },
   brand: {
     type: String,

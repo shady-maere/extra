@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import styled from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
+import ScrollToTop from './components/ScrollToTop';
 
 // Components
 import Navbar from './components/Navbar';
@@ -45,6 +46,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+        <ScrollToTop />
         <GlobalStyles />
         <AppContainer>
           <Navbar />

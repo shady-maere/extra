@@ -4,26 +4,52 @@ import { Link } from 'react-router-dom';
 
 const SliderContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 500px;
+  width: 100vw;
+  height: 600px;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  max-width: 100vw;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     height: 300px;
+    width: 100%;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
 const Slide = styled.div`
   position: absolute;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   opacity: ${props => props.active ? 1 : 0};
   transition: opacity 1s ease-in-out;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  justify-content: flex-start;
+  padding: 0 max(10%, calc((100vw - 1400px) / 2));
+  left: 0;
+  right: 0;
+
+  @media (max-width: 768px) {
+    padding: 0 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    left: 0;
+  }
 `;
 
 const SlideContent = styled.div`
@@ -31,12 +57,18 @@ const SlideContent = styled.div`
   max-width: 600px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
   h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
 
     @media (max-width: 768px) {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
   }
 
@@ -45,7 +77,8 @@ const SlideContent = styled.div`
     margin-bottom: 30px;
 
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
     }
   }
 `;
