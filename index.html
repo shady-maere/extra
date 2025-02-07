@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Store - Online Shopping</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="logo.png" alt="Your Store">
+            </div>
+            <div class="header-links">
+                <a href="#">Help Centre</a>
+                <a href="#">Sell on Your Store</a>
+            </div>
+            <div class="search-container">
+                <div class="department-select">
+                    <select>
+                        <option>Shop by Department</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="Search for products, brands...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="user-nav">
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+                <a href="#">Orders</a>
+                <div class="account-dropdown">
+                    <button>My Account <i class="fas fa-chevron-down"></i></button>
+                </div>
+                <div class="wishlist">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <ul class="nav-links">
+                <li><a href="#" class="special">STORE For Less</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">MORE Deals & Promotions</a></li>
+                <li><a href="#">Summer</a></li>
+                <li><a href="#">Valentine's Day</a></li>
+                <li><a href="#">Small Local Sellers</a></li>
+                <li><a href="#">Brands Store</a></li>
+                <li><a href="#">Clearance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="categories">
+            <ul>
+                <li><a href="#">Virtual Shopping Assistants <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Appliances <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Automotive & DIY <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Baby & Toddler <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Beauty <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Books & Courses <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Camping & Outdoor <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Clothing & Shoes <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Electronics <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Gaming & Media <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Garden, Pool & Patio <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Groceries & Household <i class="fas fa-chevron-right"></i></a></li>
+                <li><a href="#">Health & Personal Care <i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+            <div class="more-deals-banner">
+                <h3>STORE more deals</h3>
+                <p>Exclusive offers for members</p>
+            </div>
+        </aside>
+
+        <div class="main-content">
+            <section class="hero-slider">
+                <div class="slide active">
+                    <div class="slide-content">
+                        <h2>STORE more exclusive</h2>
+                        <div class="offer-text">
+                            <p>members get an extra 15% off select</p>
+                            <h1>Everyday Essentials</h1>
+                            <p class="subtitle">No order minimum</p>
+                            <p class="terms">save more</p>
+                            <small>While stocks last. T&Cs apply.</small>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="essentials.png" alt="Everyday Essentials">
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <section class="featured-brands">
+                <h2>Featured Brands</h2>
+                <div class="brand-carousel">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="brands">
+                        <img src="brand1.png" alt="Brand 1">
+                        <img src="brand2.png" alt="Brand 2">
+                        <img src="brand3.png" alt="Brand 3">
+                        <img src="brand4.png" alt="Brand 4">
+                        <img src="brand5.png" alt="Brand 5">
+                    </div>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <section class="valentines-section">
+                <div class="section-header">
+                    <h2>Shop Valentine's Day Gifting</h2>
+                    <a href="#" class="view-more">View More</a>
+                </div>
+                <div class="product-carousel">
+                    <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="products">
+                        <!-- Product cards will be dynamically added here -->
+                    </div>
+                    <button class="next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="cookie-notification">
+            <p>Please note that we use cookies to offer you a better user experience, analyse site traffic, and better serve advertising. By continuing to use this website, you consent to the use of cookies in accordance with our <a href="#">Privacy Policy</a></p>
+            <button class="got-it">Got it</button>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html> 
