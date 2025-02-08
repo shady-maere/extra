@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { FaChevronLeft, FaChevronRight, FaHeart, FaShoppingCart, FaStar } from 'react-icons/fa';
+import SolarBanner from '../components/home/SolarBanner';
 
 const HomePage = styled.div`
   background-color: #f5f5f5;
@@ -239,6 +240,22 @@ const ViewMore = styled(Link)`
   
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+const MobileBanner = styled.div`
+  display: none;
+  width: 100%;
+  margin: 1rem 0;
+  
+  @media (max-width: 768px) {
+    display: block;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 `;
 
@@ -761,11 +778,11 @@ const Home = () => {
 
         <Section>
           <SectionHeader>
-            <h2>Solar Panels, Inverters & Batteries</h2>
-            <ViewMore to="/category/solar">View All Solar Products</ViewMore>
+            <h2>Phones</h2>
+            <ViewMore to="/category/phones">View All</ViewMore>
           </SectionHeader>
           <ProductsGrid>
-            {solarProducts.map(product => {
+            {phoneProducts.map(product => {
               const discount = calculateDiscount(product.price, product.originalPrice);
               return (
                 <ProductCard key={product.id}>
@@ -798,13 +815,15 @@ const Home = () => {
           </ProductsGrid>
         </Section>
 
+        <SolarBanner />
+
         <Section>
           <SectionHeader>
-            <h2>Phones</h2>
-            <ViewMore to="/category/phones">View All Phones</ViewMore>
+            <h2>Solar Panels, Inverters & Batteries</h2>
+            <ViewMore to="/category/solar">View All</ViewMore>
           </SectionHeader>
           <ProductsGrid>
-            {phoneProducts.map(product => {
+            {solarProducts.map(product => {
               const discount = calculateDiscount(product.price, product.originalPrice);
               return (
                 <ProductCard key={product.id}>
@@ -962,6 +981,10 @@ const Home = () => {
             })}
           </ProductsGrid>
         </Section>
+
+        <MobileBanner>
+          <img src="/images/Banners/Banner.jpg" alt="Special Offer" />
+        </MobileBanner>
       </MainContent>
     </HomePage>
   );
